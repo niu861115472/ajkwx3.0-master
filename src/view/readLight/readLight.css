@@ -1,0 +1,32 @@
+.readLight_wrap {
+  height: 100%;
+  background: url('../../assets/imgs/light/readLight_bg.png')no-repeat;
+  background-size: 100% 100%;
+}
+
+.blank1 {
+  height: 90px;
+}
+.blank2 {
+  height: 50px
+}
+.blank3 {
+  height: 90px
+}
+.switch {
+  box-sizing: border-box;
+  height: 140px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1Px solid #d8d8d8;
+}
+.switch_label {
+  font-size: 30px;
+}
+.switch_img {
+  width: 80px;
+  height: 80px;
+}

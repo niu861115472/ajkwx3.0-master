@@ -1,0 +1,64 @@
+.card_bg{
+    width: 630px;
+    height: 768px;
+    background: url('../../assets/card_bg.png');
+    background-size: 100% 100%;
+    margin: 202px auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.cir{
+    width: 321px;
+    height: 322px;
+    margin: 120px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.cir_on{
+    background: url('../../assets/cir.png');
+    background-size: 100% 100%;
+}
+.cir_off {
+    background: url('../../assets/cir_off.png');
+    background-size: 100% 100%;
+}
+.tem {
+    font-size: 118px;
+    color: #fff;
+    font-weight: 200
+}
+.tem>span{
+    font-size: 36px;
+    position: absolute
+}
+.tem_title{
+    text-align: center
+}
+.tem_title img {
+    width: 30px;
+    margin-right: 18px;
+}
+.swtich_wrap {
+  background-color: #fff;
+  display: flex;
+  border-radius: 36px;
+  overflow: hidden;
+}
+.swtich{
+    width: 168px;
+    height: 72px;
+    text-align: center;
+    line-height: 72px;
+    border-radius: 36px;
+}
+.swtich.active {
+    background-color: #eb7e4a;
+    color: #fff;
+}
+.active_off{
+    background-color: #666;
+    color: #fff;
+}

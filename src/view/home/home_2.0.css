@@ -1,0 +1,218 @@
+.home_bg{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* overflow: auto; */
+    
+  }
+  .content_box{
+    height: 100%;
+    position: relative;
+    overflow: auto;
+    padding: 0 30px;
+    background-color: #f1f1f1
+  }
+  .top_item{
+    height: 25%;
+    background-image: url('../../assets/imgs/home/hotel_pic@2x.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+  }
+  .wzg {
+    height: 50%;
+    background-image: url('../../assets/imgs/home/backgrwz.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+  }
+  
+  .home_name{
+    position: absolute;
+    left: 50px;
+    top: 150px;
+  }
+  .home_title{
+    color: #333;
+    font-size: 60px;
+    font-weight: normal;
+    font-weight: 600
+  }
+  .home_title > strong {
+    font-size: 70px
+  }
+  .home_title_welcome{
+    color: #fff;
+    font-size: 60px;
+    font-weight: 100;
+  }
+  
+  .btn_wrap{
+    width: 56px;
+    height: 80px;
+    background: url('../../assets/imgs/home/suo_on.png');
+    background-size: cover;
+  }
+  .btn_wrap:active {
+    background: url('../../assets/imgs/home/suo_off.png');
+    background-size: cover; 
+  }
+  .light_wrap{
+    width: 56px;
+    height: 80px;
+    background: url('../../assets/imgs/home/suo_on.png');
+    background-size: cover;
+  }
+  .light_wrap:active {
+    background: url('../../assets/imgs/home/suo_off.png');
+    background-size: cover; 
+  }
+  .figure_wrap{
+    position: absolute;
+    /* top:50%; */
+    left:5%;
+    width: 95%;
+    /* float: left; */
+  }
+  /* .figures {
+    display: flex;
+    flex-wrap: wrap;
+  } */
+  .figures > a{
+    width: 25%;
+    float: left
+  }
+  .home_figure{
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #fafafa;
+    border-left: 1px solid #fafafa;
+  }
+  
+  .home_figure>figcaption{
+    color: #666;
+    font-size: 36px;
+    margin-top: 20px;
+  }
+  .figure_active {
+    box-shadow: 10px 10px 5px #ccc;
+  }
+  .curtain>img{
+    width: 77px
+  }
+  .light>img{
+    width: 68px;
+    height: 78px;
+  }
+  .air>img{
+    width: 77px;
+  }
+  .tv>img{
+    width: 77px
+  }
+  .model>img{
+    width:73px;
+  }
+  .service>img{
+    width: 75px;
+  }
+  .dianti>img{
+    width: 64px;
+  }
+  .temCtrl >img {
+    width: 70px
+  }
+  
+  
+  
+  .home_envir_play {
+    width: 100%;
+    margin: 10px auto 20px auto;
+    display: flex;
+    border-radius: 10px;
+    justify-content: space-around;
+    font-size: 40px;
+    background: #ffffff;
+    color: #ff7c1d;
+    /* position: absolute;
+    top: 100px;
+    right: 50px; */
+  }
+  .home_envir_item {
+    padding: 10px 20px;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    border-radius: 10px;
+    margin-top: 20px;
+    /* display: flex; */
+    
+  }
+  .home_envir_item>span{
+    margin-left: 40px
+  }
+
+  .home_envir_item_left{
+    margin-top: 15px;
+    text-align: center
+  }
+
+  .home_envir_item_left > span{
+    display: inline-block;
+    margin-left:5px;
+    font-size:30px;
+    color: #333
+  }
+  .lock_light{
+      margin: 0 auto;
+      padding-top: 30px;
+      padding-left: 30px;
+      padding-right: -30px;
+      background: #fff;
+      border-radius: 10px
+  }
+  .temp{
+    display: inline-block;
+    width:8px;
+    height:35px;
+    position: relative;
+    top: 5px;
+    background:rgba(244,173,104,1);
+  }
+  .title{
+      margin-left: 20px;
+  }
+  .first_modal{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-direction: column;
+  }
+  .modal_wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -105px;
+  }
+  .modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff
+  }
+  
+  

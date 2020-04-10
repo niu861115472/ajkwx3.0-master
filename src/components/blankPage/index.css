@@ -1,0 +1,15 @@
+.blank-page{
+    width: 100%;    
+    height: 100%;
+    background-color: #fff;
+    text-align: center;
+}
+.blank-page > img {
+    margin-top: 250px;
+    width: 450px;
+}
+.blank-page > p {
+    margin-top: 69px;
+    color: #fb7346;
+    font-size: 36px;
+}

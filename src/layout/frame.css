@@ -1,0 +1,22 @@
+:global(.transitionWrapper-enter) {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
+:global(.transitionWrapper-enter-active) {
+    opacity: 1;
+}
+
+:global(.transitionWrapper-leave){
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+:global(.transitionWrapper-leave-active ){
+    opacity: 0;
+}
+
+:global(.transitionWrapper) {
+    position: relative;
+    height: 100%;
+}

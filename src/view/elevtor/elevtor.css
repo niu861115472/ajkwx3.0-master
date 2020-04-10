@@ -1,0 +1,44 @@
+.elevtor_bg{
+  height: 100%;
+  background: url('../../assets/imgs/elevtor/dt_bg.png');
+  background-size: 100% 100%;
+  overflow: auto;
+}
+.elevtor_bg > h2 {
+  margin-top: 180px;
+  text-align: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 200
+}
+.elevtor_wrap {
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center
+}
+.elevtor_item{
+  position: relative;
+  margin-top: 20px,
+}
+.elevtor_item.active > span {
+  color: #fff;
+}
+.elevtor_item + .elevtor_item {
+  margin-left: 20px
+}
+.elevtor_item > span{
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 72px;
+  color: #999;
+  
+  margin-top: 20px
+}
+.elevtor_item > img{
+  width: 200px;
+  height: 320px;
+}

@@ -1,0 +1,109 @@
+
+
+.logo_bg{
+  height: 100%;
+  background: url('../../assets/imgs/login/login_bg.png');
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+@media screen and (min-width: 500px) {
+.logo_bg{
+  height: auto;
+ }
+}
+.ajk_logo{
+  padding-top: 30px;
+  text-align: center;
+}
+.logo_wrap{
+  margin: 0 auto;
+}
+.logo_wrap>img{
+  width: 250px;
+  vertical-align: middle;
+}
+.logo_title{
+  width: 362px;
+  margin-top: 40px;
+}
+.login_form{
+  margin-top: 80px;
+}
+.form{
+  margin-left: 70px;
+  margin-right: 70px;
+}
+.form_group{
+  width: 100%;
+  line-height: 120px;
+  display: flex;
+  margin-bottom: 1px;
+  border-bottom: 1px solid transparent; 
+  border-image: url('../../assets/imgs/login/border.png') 0 0 2 0  stretch;
+}
+.form_group label{
+  display: inline-block;
+  width: 120px;
+  line-height: 120px;
+  text-align: center;
+}
+.form_group label img{
+  width: 48px;
+  vertical-align: middle; 
+}
+.form_group input{
+  font-size: 34px;
+  height: 120px;
+  color: #fff;
+  background-color: transparent !important;
+  border: none;
+  margin-left: 20px;
+}
+.rememberPassword_input{
+ display: none;
+
+}
+
+.checkbox{
+  display: inline-block;
+  line-height: 120px;
+  display: flex;
+  align-items: center;
+}
+.checkbox span{
+ font-size: 30px;
+  color: #fff;
+  margin-left: 20px;
+}
+.password_control{
+  line-height: 120px;
+  display: flex;
+  align-items: center;
+  margin-left: 70px;
+  margin-top: 20px
+}
+.getPassword{
+  font-size: 30px;
+  color: #fff;
+  margin-left: 60px;
+}
+.submit_button{
+  display: block;
+  width: 622px;
+  line-height: 104px;
+  margin: 0 auto;
+  background: url('../../assets/imgs/login/btn_bg.png') no-repeat;
+  background-size: 622px 104px;
+  color: #fff;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 80px;
+}
+.submit_button:active {
+  opacity: 0.7;
+}
+.getPassword:active{
+  text-decoration: underline;
+}

@@ -1,0 +1,91 @@
+.curtain_bg{
+  height: 100%;
+  background-image: url('../../assets//imgs//curtain//curtain_bg.png');
+  background-size: 100% 100%;
+  overflow: auto;
+}
+
+
+.curtain_wrap{
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px
+}
+.curtain_wrap > div {
+  margin-top: 200px
+}
+.curtain_list{
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  justify-content: space-between
+}
+.curtain_key{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 172px;
+  height: 172px;
+  background: url('../../assets/imgs/curtain/key_bg.png') no-repeat;
+  background-size: 172px 172px;
+}
+.curtain_key > img{
+  width: 69px;
+}
+
+.curtain_name{
+  padding-top: 12px;
+  color: #666;
+  font-size: 28px;
+}
+.curtain_btn{
+  width: 110px;
+  height: 110px;
+  line-height: 110px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+  font-weight: 200;
+  color: #333;
+  font-size: 30px;
+  box-shadow: 0px 5px 20px 2px #ccc;
+}
+.curtain_btn:after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top:0;
+  color: #6095f0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: -1;
+  border-radius: 50%;
+  transition: transform .2s ease-in;
+}
+
+.curtain_btn.active{
+  color: #fff;
+  background: url('../../assets//imgs/curtain/btn_active.png') no-repeat;
+  background-size: contain;
+  box-shadow: none
+}
+
+
+
+.clearfix:after {
+    content: '';
+    display: block;
+    line-height: 0;
+    clear: both;
+}
+
+.handleStyle {
+  border: none;
+   box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}

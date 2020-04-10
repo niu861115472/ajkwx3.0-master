@@ -1,0 +1,218 @@
+.light_bg
+{
+    width: 100%;
+    height: 100%;
+    background: url('../../assets/imgs/light/light_bg.png')no-repeat;
+    background-size: 100% 100%;
+    overflow: auto;
+}
+@media screen and (min-width: 500px)
+{
+    .light_bg
+    {
+        height: auto;
+    }
+}
+.tablists{
+    position: relative;
+}
+.inkBar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 4px;
+    background-color: #fb7346;
+    z-index: 1;
+  }
+.tabs{
+   display: flex;
+   margin-left: 96px;
+   padding: 0;
+   margin-right: 96px;
+   justify-content: space-between;
+   margin-top: 100px;
+}
+.tabs > li{
+  line-height: 50px;
+  list-style: none;
+  text-align: center;
+  border-radius: 25px;
+  padding: 0 10px;
+  font-size: 34px;
+  color: #fff;
+}
+.type_active{
+    color: #fb7346!important;
+    background-color: #fff
+}
+.light_card{
+    width: 480px;
+    padding: 40px;
+    margin: 160px auto;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.switch_toggle{
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center
+}
+.switch_toggle>span{
+    color: #666;
+    font-size: 28px;
+}
+
+.ligths_wrap{
+    /* display: flex;
+    flex-wrap: wrap; */
+    overflow: hidden;
+}
+.light_wrap
+{
+    width: 33.3%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;  
+}
+
+.blank_wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+.blank_wrap > span {
+    font-size: 30px;
+    color: #fb7346;
+    margin-top: 60px;
+}
+.blank_img {
+    width: 267px;
+    height: 235px;
+}
+.light_p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #666;
+    margin-top: 40px;
+    width: 100%;
+    text-align: center
+}
+
+
+
+
+:global(.lights)
+{
+    width: 100%;
+}
+
+:global(.lights_ON) > div
+{
+    background: url('../../assets/imgs/light/tonyong_on.png')no-repeat  0 20px;
+    background-size: 70px 64.6px;
+}
+:global(.lights_ON) > p
+{
+    color: #fb7346!important;
+}
+:global(.lights) img
+{
+    width: 52px;
+    margin-top: 20px;
+}
+
+/* :global(.am-switch) input[type=checkbox]:checked+div:after{
+    content: '' !important; 
+  } */
+  :global(.checkbox):after{
+    content: '' !important;  
+  }
+.light_img
+{
+    width: 70px;
+    height: 64.6px;
+    margin: 0 auto;
+    padding-top: 20px;
+    background: url('../../assets/imgs/light/tonyong_off.png')no-repeat 0 20px;
+    background-size: 70px 64.6px;
+}
+:global(.卧室主灯_ON) >div {
+    background: url('../../assets/imgs/light/zhudeng_ON.png')no-repeat no-repeat 0 20px;
+    background-size: .68rem .64rem;
+}
+:global(.卧室主灯_OFF) >div {
+    background: url('../../assets/imgs/light/zhudeng_off.png')no-repeat no-repeat 0 20px;
+    background-size: .68rem .64rem;
+}
+:global(.卧室背景灯_ON) >div {
+    background: url('../../assets/imgs/light/beijingdeng_on.png')no-repeat no-repeat 0 20px;
+    background-size: .68rem .64rem;
+}
+:global(.卧室背景灯_OFF) >div {
+    background: url('../../assets/imgs/light/beijingdeng_off.png')no-repeat no-repeat 0 20px;
+    background-size: .68rem .64rem;
+}
+:global(.卧室床头灯_ON) >div {
+    background: url('../../assets/imgs/light/chuangtou_on.png')no-repeat no-repeat 0 20px;
+    background-size: .68rem .64rem;
+}
+:global(.卧室床头灯_OFF) >div {
+    background: url('../../assets/imgs/light/chuangtou_off.png')no-repeat no-repeat 0 20px;
+    background-size: .68rem .64rem;
+} 
+:global(.卧室镜前灯_ON) >div {
+    background: url('../../assets/imgs/light/jingqian_on.png')no-repeat no-repeat center center;
+    background-size: contain;
+}
+:global(.卧室镜前灯_OFF) >div {
+    background: url('../../assets/imgs/light/jingqian_off.png')no-repeat no-repeat center center;
+    background-size: contain;
+} 
+:global(.卧室廊灯_ON) >div {
+    background: url('../../assets/imgs/light/langdeng_on.png')no-repeat no-repeat 0 20px;
+    background-size: contain;
+}
+:global(.卧室廊灯_OFF) >div {
+    background: url('../../assets/imgs/light/langdeng_off.png')no-repeat no-repeat 0 20px;
+    background-size: contain;
+} 
+:global(.卧室夜灯_ON) >div {
+    background: url('../../assets/imgs/light/yedeng_on.png')no-repeat no-repeat center center;
+    background-size: contain;
+}
+:global(.卧室夜灯_OFF) >div {
+    background: url('../../assets/imgs/light/yedeng_off.png')no-repeat no-repeat center center;
+    background-size: contain;
+} 
+:global(.卧室射灯_ON) >div {
+    background: url('../../assets/imgs/light/shedeng_on.png')no-repeat no-repeat 0 20px;
+    background-size: contain;
+}
+:global(.卧室射灯_OFF) >div {
+    background: url('../../assets/imgs/light/shedeng_off.png')no-repeat no-repeat 0 20px;
+    background-size: contain;
+} 
+:global(.卫生间淋浴灯_ON) >div {
+    background: url('../../assets/imgs/light/linyudeng_on.png')no-repeat no-repeat 0 20px;
+    background-size: contain;
+}
+:global(.卫生间淋浴灯_OFF) >div {
+    background: url('../../assets/imgs/light/linyudeng_off.png')no-repeat no-repeat 0 20px;
+    background-size: contain;
+} 
+:global(.卫生间顶灯_ON) >div {
+    background: url('../../assets/imgs/light/dingdeng_on.png')no-repeat no-repeat center center;
+    background-size: contain;
+}
+:global(.卫生间顶灯_OFF) >div {
+    background: url('../../assets/imgs/light/dingdeng_off.png')no-repeat no-repeat center center;
+    background-size: contain;
+} 

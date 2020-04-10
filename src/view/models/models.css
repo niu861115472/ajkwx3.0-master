@@ -1,0 +1,110 @@
+.models_bg{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.figure{
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 180px;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: 100% 100%!important;
+  position: relative;
+  background: url('../../assets/imgs/models/tongyong_bg.png') no-repeat;
+}
+.figure > div{
+  width: 71px;
+  height: 75px;
+  background: url('../../assets/imgs/models/tongyong.png') no-repeat;
+  background-size: contain!important;
+}
+.checked{
+  position: absolute;
+  width: 68px;
+  top: 0;
+  right: 0;
+}
+
+.img_wrap > div {
+  width: 100%;
+  height: 100%;
+
+}
+.figcaption{
+  font-size: 30px;
+  margin-top: 20px;
+  color: #fff;
+}
+.起床{
+  background: url('../../assets/imgs/models/getup_bg.png') no-repeat;
+}
+.起床 > div{
+  width: 71px;
+  height: 75px;
+  background: url('../../assets/imgs/models/getup.png') no-repeat;
+  
+}
+
+.睡眠{
+  background: url('../../assets/imgs/models/night_bg.png') no-repeat;
+  
+}
+.睡眠 > div{
+  width: 76px;
+  height: 78px;
+  background: url('../../assets/imgs/models/night.png') no-repeat;
+}
+
+
+.阅读{
+  background: url('../../assets/imgs/models/reading_bg.png') no-repeat;
+  
+}
+.阅读 > div{
+  width: 87px;
+  height: 69px;
+  background: url('../../assets/imgs/models/reading.png') no-repeat;
+}
+
+
+.外出{
+  background: url('../../assets/imgs/models/checkout_bg.png') no-repeat;
+  
+}
+.外出 > div{
+  width: 70px;
+  height: 60px;
+  background: url('../../assets/imgs/models/reading.png') no-repeat;
+}
+
+
+.影视 {
+  background: url('../../assets/imgs/models/movie_bg.png') no-repeat;
+  
+}
+.影视 > div{
+  width: 77px;
+  height: 70px;
+  background: url('../../assets/imgs/models/movie.png') no-repeat;
+  
+}
+
+.迎宾{
+  background: url('../../assets/imgs/models/customer_bg.png') no-repeat;
+  
+}
+.迎宾 > div{
+  width: 82px;
+  height: 58px;
+  background: url('../../assets/imgs/models/customer.png') no-repeat;
+  
+}
+
+
+

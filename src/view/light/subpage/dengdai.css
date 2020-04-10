@@ -1,0 +1,116 @@
+.yududeng_wrap {
+  height: 100%;
+  background: url(../../../assets/imgs/light/yududeng_bg.png)no-repeat;
+  background-size: 100% 100%;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+}
+.btn {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.2rem;
+}
+.img {  
+  width: 0.4rem;
+  height: 0.36rem;
+  vertical-align: middle;
+  opacity: 0;
+  transition: 1s all;
+}
+.active .img {
+  transform: rotate(360deg);
+  opacity: .8;
+}
+
+.red{
+  position: absolute;
+  left: calc(50% - 1.5rem);
+  top: calc(50% - 3.5rem);
+  box-shadow: 0 0 0.1rem 0.1rem rgba(255, 0, 0, 0.5)
+
+}
+.green{
+  position: absolute;
+  left: calc(50% + 0.5rem);
+  top: calc(50% - 3.5rem);
+  box-shadow: 0 0 0.1rem 0.1rem rgba(0, 128, 0, 0.5)
+}
+.blue {
+  position: absolute;
+  left: calc(50% - 3rem);
+  top: calc(50% - 2rem);
+  box-shadow: 0 0 0.1rem 0.1rem rgba(0, 0, 255, 0.5)
+}
+.white{
+  position: absolute;
+  left: calc(50% + 2rem);
+ top: calc(50% - 2rem);
+  box-shadow: 0 0 0.1rem 0.1rem rgba(255, 255, 255, 0.5)
+}
+.yellow{
+  position: absolute;
+  left: calc(50% - 3rem);
+  top: calc(50%);
+ box-shadow: 0 0 0.1rem 0.1rem rgba(255, 255, 0, 0.5)
+}
+.pink{
+  position: absolute;
+  left: calc(50% + 2rem);
+ top: calc(50%);
+ box-shadow: 0 0 0.1rem 0.1rem rgba(255, 192, 203, 0.5)
+}
+.cornflowerblue{
+  position: absolute;
+  left: calc(50% - 1.5rem);
+ top: calc(50% + 1.5rem);
+ box-shadow: 0 0 0.1rem 0.1rem rgba(100, 149, 237, 0.5)
+}
+.orange{
+  position: absolute;
+  left: calc(50% + 0.5rem);
+ top: calc(50% + 1.5rem);
+ box-shadow: 0 0 0.1rem 0.1rem rgba(255, 165, 0, 0.5)
+}
+.close_btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #000;
+   box-shadow: 0 0 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+  color: white;
+  line-height: 1.5rem;
+  font-size: 0.48rem;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.75rem;
+  margin-top: -1.2rem;
+  animation-name:breath;
+  animation-duration:3s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;
+  -webkit-animation-name:breath;
+  -webkit-animation-duration:3s;
+  -webkit-animation-timing-function:ease-in-out;
+  -webkit-animation-iteration-count:infinite;
+  opacity:0.1;
+}
+@keyframes breath {
+  from {
+  opacity:0.1;
+}
+ 50% {
+  opacity:1;
+}
+
+to {
+  opacity:0.1;
+}
+}

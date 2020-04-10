@@ -1,0 +1,10 @@
+img { 
+  content: normal !important; 
+}
+:global(.am-tabs-tab) {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block!important;
+  text-align: center
+}

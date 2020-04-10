@@ -1,0 +1,59 @@
+.selecthome_bg{
+   height: 100%;
+   background: url('../../assets/imgs/selectHome/selectHome_bg.png');
+   background-size: 100% 100%;
+} 
+@media screen and (min-width: 500px)
+{
+    .selecthome_bg
+    {
+        height: 100%;
+    }
+}
+.rooms{
+  position: absolute;
+  bottom: 352px;
+  left: 0;
+  right: 0;
+  /* width: 100%; */
+  height: 280px;
+  background-color: rgba(79, 87, 92, 0.7);
+  z-index: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-box-lines:single;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.room{
+  display: inline-block;
+  width: 160px;
+  padding: 20px 20px;
+  margin: 0 26px 0 24px;
+}
+
+.img_wrap{
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: url('../../assets/imgs/selectHome/round.png') no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img_wrap img {
+  width: 68px;
+  height: 122px;
+  margin-left: 20px
+}
+.room_name{
+  color: #fff;
+  margin-top: 20px;
+  text-align: center;
+  height: 30px;
+}
+.room_name + .room_name{
+  margin-top: 0
+}

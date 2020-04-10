@@ -1,0 +1,31 @@
+.inputRange{
+  padding: 0.2rem 0;
+  margin-left: 0.6rem;
+  flex: 1;
+}
+.input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    border-radius: 0.2rem; /*这个属性设置使填充进度条时的图形为圆角*/
+
+}
+.input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+} 
+.input[type=range]::-webkit-slider-runnable-track {
+    height: 0.2rem;
+    border-radius: 0.12rem; /*将轨道设为圆角的*/
+    box-shadow: 0 1px 1px #def3f8, inset 0 1px 1px #2e5da3; /*轨道内置阴影效果*/
+}
+.input[type=range]:focus {
+    outline: none;
+}
+.input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: .5rem;
+    width: 0.5rem;
+    margin-top: -0.15rem; /*使滑块超出轨道部分的偏移量相等*/
+    background: #ffffff; 
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    }
