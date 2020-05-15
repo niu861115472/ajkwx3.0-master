@@ -41,8 +41,8 @@ class LightCard extends React.Component {
     } else {
       return this.props.lights.map((light,index) => {
 
-        const status = sessionStorage.getItem('source') == '1' ? light.status : (light.status == '0' ? 'OFF' : 'ON')
-        // const status = light.status
+        // const status = sessionStorage.getItem('source') == '1' ? light.status : (light.status == '0' ? 'OFF' : 'ON')
+        const status = light.status
         const stylename = classNames({ lights: true, ['lights_' + status]: true, [light.name + '_' + status]: true })
         console.log(this.props.lights, status)
         const lightName1 = light.name.replace(this.props.lightStore.middleRoundStatus, '')
@@ -51,7 +51,7 @@ class LightCard extends React.Component {
         return (
           <div styleName='light_wrap' key={light.deviceId}>
             <div className={stylename}
-              onClick={this.lightsClick.bind(this, light.id, status,index, light.name, light.deviceId)}>
+              onClick={this.lightsClick.bind(this, light.id, status, light.name,light.deviceId)}>
               <div styleName="light_img"></div>
               <p styleName='light_p'>{lightName3}</p>
             </div>
@@ -60,7 +60,7 @@ class LightCard extends React.Component {
       })
     }
   }
-  lightsClick = (wayId, status,index, name, deviceId) => {
+  lightsClick = (wayId, status, name,deviceId) => {
     const { lights } = this.props
     if (name.indexOf('可调灯带灯') > -1) {
       hashHistory.push(`light/dengdai?deviceId=${deviceId}`)
@@ -70,13 +70,14 @@ class LightCard extends React.Component {
       hashHistory.push(`light/readLight?deviceId=${deviceId}`)
       return
     }
-
-    // lights.forEach((light, index) => {
-    // if (light.id === wayId || light.deviceId == deviceId) {
-      this.props.lightActions.lightsClick(wayId, status, deviceId)
-      lights[index].status = !lights[index].status
-    // }
-    // })
+    // console.log(wayId, status, name)
+    lights.forEach((light, index) => {
+    if (light.id === wayId) {
+      console.log(wayId, status,index)
+      this.props.lightActions.lightsClick(wayId, status,index)  
+      // lights[index].status = !lights[index].status
+    }
+    })
   }
   render() {
     return (

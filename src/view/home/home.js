@@ -20,39 +20,38 @@ import { getParam } from '../../utlis'
 
 @connect(
   state => ({
-    idState:state.toObject().idStore, 
+    idState: state.toObject().idStore,
     homeState: state.toObject().homeStore,
-    deviceId:state.toObject().roomCardStore.deviceId,
+    deviceId: state.toObject().roomCardStore.deviceId,
     elevatorIf: state.toObject().elevtorStore.elevatorIf
   }),
   dispatch => ({
     homeActions: bindActionCreators(homeActions, dispatch),
     roomCardActions: bindActionCreators(roomCardActions, dispatch),
-    elevator: bindActionCreators(elevator,dispatch),
+    elevator: bindActionCreators(elevator, dispatch),
   })
 )
 @CSSModules(styles, { allowMultiple: true, handleNotFoundStyleName: 'ignore' })
 class Home extends React.Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
-      activeIndex:-1,
+      activeIndex: -1,
       ifFirst: !localStorage.getItem('ifFirst'),
       modalVisible: false
     }
   }
-  componentDidMount(){
-    document.title = '爱居客智慧客控'
-    // document.title = '宾智智慧客控'
-    if(window.LOGIN_IF) {
+  componentDidMount() {
+    document.title = sessionStorage.getItem('title') == 'anasu' ? '安纳舒智慧客控' : '爱居客智慧客控'
+    if (window.LOGIN_IF) {
       const houseId = this.props.location.query.houseId
       this.props.homeActions.saveHouseId(houseId)
       const serverId = this.props.location.query.serverId
       this.props.roomCardActions.initialState(serverId)
-      
+
       const hotelId = this.props.location.query.hotelId
       const floor = this.props.location.query.floor
-      this.props.elevator({floor: floor,hotelId: hotelId})
+      this.props.elevator({ floor: floor, hotelId: hotelId })
 
       this.setState({
         name: this.props.location.query.name,
@@ -69,70 +68,70 @@ class Home extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(!this.state.name && nextProps.homeState.wzjHouseInfo) {
+    if (!this.state.name && nextProps.homeState.wzjHouseInfo) {
       this.setState({
         name: nextProps.homeState.wzjHouseInfo.name
       })
     }
     const hotelId = getParam(window.location.href, 'hotelId')
-    if(hotelId) return
-    if(nextProps.idState.houseId === '' && nextProps.homeState.wzjHouseInfo) {
-      const {  hotelId, id} = nextProps.homeState.wzjHouseInfo
+    if (hotelId) return
+    if (nextProps.idState.houseId === '' && nextProps.homeState.wzjHouseInfo) {
+      const { hotelId, id } = nextProps.homeState.wzjHouseInfo
       sessionStorage.setItem('houseId', window.btoa(id))
       sessionStorage.setItem('hotelId', hotelId)
       sessionStorage.setItem('operate', 'V1ZNeGNVeFhjM1JqTWpGb1kyNVNSR1JJU25NPQ==')
       nextProps.homeActions.saveHouseId(id)
-      
+
     }
   }
 
-  figuresRender=()=>{
-    let houseId, hotelId,serverId,houseNo,houseName
-    if(this.props.homeState.wzjHouseInfo) {
-       
+  figuresRender = () => {
+    let houseId, hotelId, serverId, houseNo, houseName
+    if (this.props.homeState.wzjHouseInfo) {
+
       houseId = this.props.homeState.wzjHouseInfo.id
       hotelId = this.props.homeState.wzjHouseInfo.hotelId
       serverId = this.props.homeState.wzjHouseInfo.serverId
     } else {
-       houseId = this.props.location.query.houseId
-       hotelId = this.props.location.query.hotelId
-       serverId = this.props.location.query.serverId
-       houseNo = this.props.location.query.houseNo == 'undefined' ? '' : this.props.location.query.houseNo,
-       houseName = this.props.location.query.name
-       
+      houseId = this.props.location.query.houseId
+      hotelId = this.props.location.query.hotelId
+      serverId = this.props.location.query.serverId
+      houseNo = this.props.location.query.houseNo == 'undefined' ? '' : this.props.location.query.houseNo,
+        houseName = this.props.location.query.name
+
     }
     let figures = [
-      {name:'light',title:'灯',path:`light?houseId=${houseId}&serverId=${serverId}&houseNo=${houseNo}`},
-      {name:'air',title:'空调',path:`air?houseId=${houseId}&serverId=${serverId}&name=${houseName}`},
-      {name:'tv',title:'电视',path:`tv?houseId=${houseId}&serverId=${serverId}`},
-      {name:'curtain',title:'窗帘',path:`curtain?houseId=${houseId}&serverId=${serverId}`},
-      {name:'model',title:'情景',path:`model?houseId=${houseId}&houseNo=${houseNo}&serverId=${serverId}`},
-      {name:'service',title:'服务',path:`service?${this.props.location.search.slice(1)}`},
-      {name:'temCtrl',title:'温控',path:`temCtrl?serverId=${serverId}&houseId=${houseId}`},
-   ]
-   !window.LOGIN_IF ? figures : figures.pop()
-   figures = this.props.elevatorIf ? 
-     [...figures,{name:'dianti',title:'电梯',path:`elevtor?hotelId=${hotelId}&floor=${this.props.location.query.floor}`}]
-     : figures
-   return figures.map((figure,index) => {
+      { name: 'light', title: '灯', path: `light?houseId=${houseId}&serverId=${serverId}&houseNo=${houseNo}` },
+      { name: 'air', title: '空调', path: `air?houseId=${houseId}&serverId=${serverId}&name=${houseName}` },
+      { name: 'tv', title: '电视', path: `tv?houseId=${houseId}&serverId=${serverId}` },
+      { name: 'curtain', title: '窗帘', path: `curtain?houseId=${houseId}&serverId=${serverId}` },
+      { name: 'model', title: '情景', path: `model?houseId=${houseId}&houseNo=${houseNo}&serverId=${serverId}` },
+      { name: 'service', title: '服务', path: `service?${this.props.location.search.slice(1)}` },
+      { name: 'temCtrl', title: '温控', path: `temCtrl?serverId=${serverId}&houseId=${houseId}` },
+    ]
+    !window.LOGIN_IF ? figures : figures.pop()
+    figures = this.props.elevatorIf ?
+      [...figures, { name: 'dianti', title: '电梯', path: `elevtor?hotelId=${hotelId}&floor=${this.props.location.query.floor}` }]
+      : figures
+    return figures.map((figure, index) => {
       const stylename = classNames({
-            [figure.name]:true,
-            home_figure:true,
-            figure_active: this.state.activeIndex === index
-           })
+        [figure.name]: true,
+        home_figure: true,
+        figure_active: this.state.activeIndex === index
+      })
       return (
         <Link to={figure.path} key={figure.name} activeClassName='active'>
-          <figure styleName={stylename} key={figure.name}  onClick={this.goDetail.bind(this,index,figure.path)}>
+          <figure styleName={stylename} key={figure.name} onClick={this.goDetail.bind(this, index, figure.path)}>
             <img src={require(`../../assets/imgs/home/${figure.name}.png`)} alt="" />
             <figcaption>{figure.title}</figcaption>
           </figure>
         </Link>
       )
-   })
+    })
   }
-  goDetail(index,path){
+  goDetail(index, path) {
     this.setState({
-      activeIndex:index
+      activeIndex: index
     })
   }
   modalClick = () => {
@@ -140,34 +139,34 @@ class Home extends React.Component {
       ifFirst: false,
       modalVisible: false
     })
-    localStorage.setItem('ifFirst',1)
+    localStorage.setItem('ifFirst', 1)
     this.props.roomCardActions.openTheDoor(this.props.deviceId)
   }
   openDoor = () => {
-    if(this.state.ifFirst) {
+    if (this.state.ifFirst) {
       this.setState({
         modalVisible: true
       })
-    }else {
-    this.props.roomCardActions.openTheDoor(this.props.deviceId)
-    // alert(this.props.deviceId)
+    } else {
+      this.props.roomCardActions.openTheDoor(this.props.deviceId)
+      // alert(this.props.deviceId)
     }
   }
-  render(){
+  render() {
     // const {temp, pm, hum} = this.props.idState.envir
-    const wzjNoAthority =  this.props.homeState.wzjNoAthority 
-    return(  
+    const wzjNoAthority = this.props.homeState.wzjNoAthority
+    return (
       <div styleName='home_bg'>
-        <div styleName={window.LOGIN_IF ? "top_item" :'wzg'}>
-          <HomeName name={ this.state.name }/>
+        <div styleName={window.LOGIN_IF ? "top_item" : 'wzg'}>
+          <HomeName name={this.state.name} />
         </div>
         {/* <HomeEnvir temp={temp} pm={pm} hum={hum} /> */}
-       {
-         window.LOGIN_IF ? 
-         <LockBtn openDoor={this.openDoor}></LockBtn>:
-         null
-       }
-        <div styleName='figure_wrap' style={{marginTop: this.props.elevatorIf? '40px': '45px'}}>
+        {
+          window.LOGIN_IF ?
+            <LockBtn openDoor={this.openDoor}></LockBtn> :
+            null
+        }
+        <div styleName='figure_wrap' style={{ marginTop: this.props.elevatorIf ? '40px' : '45px' }}>
           <div styleName='figures'>
             {
               this.figuresRender()
@@ -175,17 +174,17 @@ class Home extends React.Component {
           </div>
         </div>
         {
-          this.state.modalVisible?
-           <div styleName='first_modal' onClick={this.modalClick}>
-             <img style={{width: '74.6%'}} src={require('../../assets/imgs/home/lock_gif.gif')} alt=''/>
-             <img onClick={this.modalClick} style={{marginTop: '30px', width: '40px'}} src={require('../../assets/imgs/home/close_icon.png')} alt=""/>
-           </div>
-           :null
+          this.state.modalVisible ?
+            <div styleName='first_modal' onClick={this.modalClick}>
+              <img style={{ width: '74.6%' }} src={require('../../assets/imgs/home/lock_gif.gif')} alt='' />
+              <img onClick={this.modalClick} style={{ marginTop: '30px', width: '40px' }} src={require('../../assets/imgs/home/close_icon.png')} alt="" />
+            </div>
+            : null
         }
         {
           wzjNoAthority ?
-          null :
-          <Modal />
+            null :
+            <Modal />
         }
       </div>
     )

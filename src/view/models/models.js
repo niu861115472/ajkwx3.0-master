@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import styles from './models.css'
 import * as modelActions from '../../actions/model-actions'
 
-const source = sessionStorage.getItem('source')
+// const source = sessionStorage.getItem('source')
 
 @connect(
   state => ({modelState:state.toObject().modelStore}),
@@ -44,7 +44,7 @@ const source = sessionStorage.getItem('source')
     }, 2000)
   }
   modelRender_type1(){
-    const modelArray = source == '1' ? this.props.modelState.models.scenes : this.props.modelState.models
+    const modelArray = sessionStorage.getItem('source') == '1' ? this.props.modelState.models.scenes : this.props.modelState.models
     console.log(modelArray)
 
     const houseNo  = this.props.location.query.houseNo
@@ -117,9 +117,9 @@ const source = sessionStorage.getItem('source')
     }
   }
   render(){
-    const type  = source == '2' ? 0 : this.props.modelState.models.type
+    const type  = sessionStorage.getItem('source') == '2' ? 0 : this.props.modelState.models.type
     // const
-    console.log(this.props.modelState.models)
+    console.log(this.props.modelState.models,type)
     return(
       <div styleName='models_bg'>
           { type === 0 ? this.modelRender_type1() : this.modelRender_type2() }

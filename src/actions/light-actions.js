@@ -8,7 +8,7 @@ export function initialLights(info, roomId) {
   return function (dispatch, getState) {
     const token = getState().toObject().idStore.token || token_session
     const houseId = getState().toObject().idStore.houseId || houseId_session
-    if (sessionStorage.getItem('source') == '1') {
+    // if (sessionStorage.getItem('source') == '1') {
       request.get(config.api.queryLightsStatus, { ...info, token: token, deviceType: 'SWITCH' })
         .then(res => {
           console.log(res)
@@ -50,34 +50,35 @@ export function initialLights(info, roomId) {
                 })
             })
         })
-    } else {
-      request.get(config.api.getHostDevices, { roomId: roomId, type: 'LIGHT' })
-        .then(res => {
-          console.log(res)
-          if (res && res.success) {
-            // dispatch(getServeId(res.dataObject.serverId))
-            let lights =
-              lights = res.result.filter(function (light) {
-                return light.name.indexOf('灯') > -1
-              })
-            console.log(lights)
-            return lights
-          }
-        })
-        .then(lights => {
-          request.get(config.api.getHostDevices, { roomId: roomId, type: 'DIMMER' })
-            .then(res => {
-              let allLight = []
-              if (res && res.success && res.result.length > 0) {
-                // res.dataObject.devices[0].name = '其他可调阅读灯'
-                allLight = [...lights, ...res.result]
-              } else {
-                allLight = lights
-              }
-              dispatch(getLightsWays(allLight))
-            })
-        })
-    }
+    // } 
+    // else {
+    //   request.get(config.api.getHostDevices, { roomId: roomId, type: 'LIGHT' })
+    //     .then(res => {
+    //       console.log(res)
+    //       if (res && res.success) {
+    //         // dispatch(getServeId(res.dataObject.serverId))
+    //         let lights =
+    //           lights = res.result.filter(function (light) {
+    //             return light.name.indexOf('灯') > -1
+    //           })
+    //         console.log(lights)
+    //         return lights
+    //       }
+    //     })
+    //     .then(lights => {
+    //       request.get(config.api.getHostDevices, { roomId: roomId, type: 'DIMMER' })
+    //         .then(res => {
+    //           let allLight = []
+    //           if (res && res.success && res.result.length > 0) {
+    //             // res.dataObject.devices[0].name = '其他可调阅读灯'
+    //             allLight = [...lights, ...res.result]
+    //           } else {
+    //             allLight = lights
+    //           }
+    //           dispatch(getLightsWays(allLight))
+    //         })
+    //     })
+    // }
   }
 }
 
@@ -131,10 +132,10 @@ export function modelsClick(sceneId) {
 // 灯点击
 export function lightsClick(wayId, status,deviceId) {
 
-  const actionType = sessionStorage.getItem('source') == '1' ? (status === 'ON' ? 'CLOSE' : 'OPEN') : (status == 'OFF' ? 'open' : 'close')
-  // const actionType = status === 'ON' ? 'CLOSE' : 'OPEN'
-  const status_on = sessionStorage.getItem('source') == '1' ? (status === 'ON' ? 'OFF' : 'ON') : (status == '0' ? 'ON' : 'OFF')
-  // const status_on = status === 'ON' ? 'OFF' : 'ON'
+  // const actionType = sessionStorage.getItem('source') == '1' ? (status === 'ON' ? 'CLOSE' : 'OPEN') : (status == 'OFF' ? 'open' : 'close')
+  const actionType = status === 'ON' ? 'CLOSE' : 'OPEN'
+  // const status_on = sessionStorage.getItem('source') == '1' ? (status === 'ON' ? 'OFF' : 'ON') : (status == '0' ? 'ON' : 'OFF')
+  const status_on = status === 'ON' ? 'OFF' : 'ON'
   return function (dispatch, getState) {
     const token = getState().toObject().idStore.token || token_session
     const houseId = getState().toObject().idStore.houseId || houseId_session
@@ -156,9 +157,9 @@ export function lightsClick(wayId, status,deviceId) {
           }
         })
     } else {
-      dispatch(changelightstatus(deviceId, status_on))
+      dispatch(changelightstatus(wayId, status_on))
       request.get(config.api.deviceControl,{
-        deviceId:deviceId,
+        deviceId:wayId,
         type:'LIGHT',
         op:'switch',
         val:actionType

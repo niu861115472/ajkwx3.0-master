@@ -3,8 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no, user-scalable=no" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no, user-scalable=no" />
   <meta name="theme-color" content="#000000">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 
   <!--
       manifest.json provides metadata used when your web app is added to the
@@ -21,9 +25,10 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>爱居客智慧生活</title>
+  <title></title>
   <!-- <title>宾智智慧生活</title> -->
-  <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
+  <script
+    src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
 </head>
 
 <body>
@@ -32,11 +37,22 @@
   </noscript>
   <div id="root"></div>
   <script>
-   // document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px'
+    // document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px'
     window.onload = function () {
       window.viewportUnitsBuggyfill.init({
         hacks: window.viewportUnitsBuggyfillHacks
       });
+    }
+
+    function getKeyWord(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(window.location.href) || [, ""])[1].replace(/\+/g, '%20')) || null
+    }
+    var title = getKeyWord('sign')
+    if (title == 'anasu') {
+      document.title = '安纳舒智慧生活'
+      sessionStorage.setItem('title', title)
+    } else {
+      document.title = '爱居客智慧生活'
     }
   </script>
 </body>

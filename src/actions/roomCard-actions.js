@@ -37,7 +37,7 @@ export function initialState(roomId) {
           if (res && res.success) {
 
             if (res && res.success && res.result.length > 0) {
-              dispatch(initail(res.result[0].roomId))
+              dispatch(initail(res.result[0].deviceId))
             }
           }
         })
@@ -54,6 +54,7 @@ export function initail(deviceId) {
 }
 // 开门
 export function openTheDoor(deviceId, cb) {
+  console.log(deviceId)
   return (dispatch, getStore) => {
     const token = getStore().toObject().idStore.token || token_session
     const houseId = getStore().toObject().idStore.houseId || houseId_session
