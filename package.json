@@ -47,7 +47,7 @@
     "query-string": "^5.0.1",
     "react": "^15.6.2",
     "react-addons-css-transition-group": "^15.5.2",
-    "react-dev-utils": "^3.0.2",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^15.3.2",
     "react-error-overlay": "^1.0.9",
     "react-fastclick": "^3.0.2",
